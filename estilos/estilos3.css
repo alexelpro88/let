@@ -1,0 +1,164 @@
+body {
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    gap: 10px;
+    padding: 20px;
+    background-color: white;
+}
+
+.box {
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+.box1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    background-color: red;
+    height: 300px; 
+}
+
+.box2 {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 2; 
+    height: 450px; 
+    position: relative;
+    background-color: rgb(49, 199, 207);
+}
+
+.box3 {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 1; 
+    height: 100px; 
+    position: relative;
+    top: 0px; 
+    background-color: rgb(181, 36, 161);
+}
+
+.box4 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    position: relative;
+    top: 100px;
+    background-color: lightseagreen;
+}
+
+.box5 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    width: 230px;  
+    height: 50px;  
+    position: relative;
+    top: 100px;
+    background-color: yellow;
+}
+
+.box6 {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 2;
+    height: 260px;
+    position: relative;
+    top: 40px;
+    background-color: rgb(205, 46, 112);
+}
+
+.box7 {
+    grid-column: 5 / span 2;
+    grid-row: 2 / span 3;
+    height: 400px;
+    position: relative;
+    top: 10px;
+    background-color: rgb(7, 108, 238);
+}
+
+.box8 {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1; 
+    position: relative;
+    top: 100px;
+    background-color: rgb(218, 133, 41);
+}
+
+.box9 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    width: 230px;  
+    height: 140px; 
+    position: relative;
+    top: 160px;
+    background-color: rgb(54, 212, 112);
+}
+
+.box10 {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2; 
+    height: 100px; 
+    position: relative;
+    background-color: rgb(231, 182, 38);
+}
+
+.box11 {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2; 
+    height: 340px; 
+    position: relative;
+    top: 110px;
+    background-color: orange;
+}
+
+.box12 {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 1; 
+    width: 340px; 
+    height: 100px; 
+    position: relative;
+    top: 110px; 
+    left: 110px; 
+    background-color: rgb(186, 34, 34);
+}
+
+.box13 {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 1; 
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    top: 110px; 
+    background-color: rgb(36, 181, 113);
+}
+
+.box14 {
+    grid-column: 5 / span 2;
+    grid-row: 2 / span 3;
+    height: 90px;
+    position: relative;
+    top: 420px;
+    background-color: rgb(234, 7, 238);
+}
+
+/* Media Query para pantallas pequeñas (móviles y tablets) */
+@media (max-width: 768px) {
+    body {
+        /* Ajustamos el grid para 2 columnas arriba y 1 abajo */
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        grid-template-rows: auto; /* Altura automática para ajustarse al contenido */
+    }
+
+    .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12, .box13, .box14 {
+        width: auto; /* Asegura que las cajas se ajusten al nuevo ancho */
+        height: auto; /* Ajusta la altura para que no se desborde en pantallas pequeñas */
+    }
+
+    /* Colocamos las primeras dos columnas en la primera fila */
+    .box1, .box2 {
+        grid-column: 1 / span 1;
+        grid-row: auto;
+    }
+
+    /* Las otras columnas (3) en la siguiente fila */
+    .box3 {
+        grid-column: 1 / span 2; /* Ocupa el espacio de las dos columnas en la siguiente fila */
+        grid-row: auto;
+    }
+}
